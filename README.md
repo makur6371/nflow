@@ -4,9 +4,9 @@
 
 <div align="center">
 
-  **Reliable, Free, and Powerful AI Novel Writing Tool**
+  **AI-Powered Novel Writing Pipeline Engine**
 
-  <small>Full name: novel-flow</small>
+  <small>Not just "write some text", but help you finish a whole novel, stably.</small>
 
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
   [![Node.js](https://img.shields.io/badge/node-%3E%3D20.0.0-blue.svg)](https://nodejs.org/)
@@ -15,7 +15,7 @@
   [![GitHub forks](https://img.shields.io/github/forks/makur6371/nflow?style=social)](https://github.com/makur6371/nflow/network/members)
   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-  *Based on Alibaba iflow architecture, completely free, designed specifically for novel creation*
+  *Treats fiction writing as an engineering problem, not a chat session*
 
 </div>
 
@@ -38,30 +38,119 @@
 
 ## Introduction
 
-**nflow** is an AI novel writing CLI tool deeply refactored based on Alibaba's iflow-cli architecture. (Full name: novel-flow)
+**nflow is an AI-powered novel writing pipeline engine.**
 
-It is designed specifically for novel creators, solving hallucination problems in long-form writing through a triple self-review mechanism, while integrating iflow's free models for zero-cost usage.
+> **It treats fiction writing as an engineering problem, not a chat session.**
+
+Unlike traditional AI writing assistants that rely on chat-based interactions, nflow provides a structured, engineering approach to long-form fiction creation. It combines multi-agent collaboration with a triple self-review mechanism to solve the core problem of AI-generated long texts: **instability and inconsistency**.
+
+### The Real Problem It Solves
+
+Most AI writing tools share one fundamental limitation:
+
+> **They can write, but they can't keep writing consistently.**
+
+Common manifestations:
+- Character personalities drift after 3-5 chapters
+- Previous settings are forgotten or contradict themselves
+- Plot progresses by random inspiration rather than long-term planning
+- Long-form quality is completely uncontrollable, requiring constant rewriting
+
+**nflow is positioned exactly on this pain point:** It doesn't pursue "instant inspiration" but aims for **sustained, controllable, and reusable long-text production**.
 
 ### Core Philosophy
 
-- **🎯 Reliable**: Triple self-review mechanism, thoroughly solving hallucination problems in long-form writing
-- **🆓 Free**: Integrated with iflow's free models, zero cost to use
-- **💪 Powerful**: 36 specialized generators, 18 writing templates
-
-### Project Background
-
-Current AI novel writing tools in the market are not yet mature enough, with the following pain points:
-
-1. **Long-form hallucination issues**: Inconsistent character personalities, chaotic timelines, and contradictions after 10 chapters
-2. **Low creation efficiency**: Lack of professional generation tools and templates
-3. **Limited functionality**: Only provides basic writing, lacking professional support
-4. **High costs**: Need to pay for high-quality models
-
-nflow deeply refactors iflow-cli specifically for novel creation scenarios, solving these pain points.
+- **🏭 Writing as Engineering**: Break creation into executable steps, not just a pile of prompts
+- **🔄 Multi-Agent + Triple Review**: Not "write and done", but "write → check → fix → recheck"
+- **🎛️ Control Over Speed**: Prioritize quality and controllability over instant gratification
+- **🛠️ CLI + Templates + Generators**: Reuse writing methods like code, not start from scratch each time
 
 ---
 
+## nflow vs Other AI Writing Tools
+
+### nflow vs ChatGPT / Claude (General Chat-based AI)
+
+| Dimension | ChatGPT / Claude | nflow |
+|-----------|------------------|-------|
+| Usage | Conversation | CLI + Pipeline |
+| Writing Model | Single model impromptu | Multi-Agent Collaboration |
+| Long-form Consistency | Low, relies on human memory | High, relies on structure and review |
+| Writing Process | None | Clear stages (Outline → Chapter → Review) |
+| Control | Weak | Strong |
+| Target Audience | Temporary writing, short texts | Systematic novel writers |
+
+**One-sentence evaluation:** **ChatGPT is "someone who can write", nflow is "a writing factory".**
+
+---
+
+### nflow vs Commercial AI Novel Platforms (Sudowrite, NovelAI, etc.)
+
+| Dimension | Commercial AI Novel Platforms | nflow |
+|-----------|------------------------------|-------|
+| Product Form | Web UI | CLI |
+| Usage Barrier | Low | Medium |
+| Customizability | Limited | Extremely High |
+| Writing Logic | Feature stacking | Process-driven |
+| Long-form Stability | Medium | High |
+| Openness | Closed Source | Open Source |
+| Target Audience | General creators | Heavy creators / Technical writers |
+
+**One-sentence evaluation:** **Commercial platforms sell "experience", nflow sells "control".**
+
+---
+
+### nflow vs One-Click Book Generation Tools
+
+| Dimension | One-Click Tools | nflow |
+|-----------|-----------------|-------|
+| Writing Quality | Unstable | Controllable |
+| Modifiability | Poor | Strong |
+| Author Participation | Minimal | High |
+| Result Maintainability | Almost none | Complete structure |
+| Practicality | Gimmick | Practical |
+
+**One-sentence evaluation:** **One-click tools are lottery tickets, nflow is a production line.**
+
+---
+
+## Who Is nflow For?
+
+nflow **is not for everyone**, which is actually its strength.
+
+### Perfect For:
+
+- People who want to write **100,000+ words** novels
+- People obsessed with AI output **controllability**
+- People willing to sacrifice some instant gratification for quality
+- Technical background authors / Open source writers
+- People who treat writing as a long-term project, not a toy
+
+### Not Recommended For:
+
+- People looking for "write a novel with one click"
+- People who prefer visual UI over command line
+- People writing short stories (under 50,000 words)
+- People who want completely hands-off AI writing
+
 ## Core Features
+
+### nflow's Unique Moat
+
+Not just "AI novel writing", but the combination of these three points:
+
+1. **Writing Process Engineering**
+   Break creation into executable steps, not just a pile of prompts.
+
+2. **Multi-Agent + Triple Self-Review**
+   Not "write and done", but **write → check → fix → recheck**.
+
+3. **CLI + Templates + Generator System**
+   Reuse writing methods like code, not start from scratch each time.
+
+These three points together make it **irreplaceable**.
+
+---
 
 ### 🎯 Triple Self-Review Mechanism
 
@@ -329,7 +418,7 @@ Fix complete!
 - Node.js >= 20.0.0
 - npm >= 9.0.0
 
-#### Installation Steps
+#### Install Steps
 
 ```bash
 # 1. Install iflow (free)
@@ -345,7 +434,7 @@ npm install -g @nflow/cli
 nflow --version
 ```
 
-### Create Project
+### First Usage
 
 ```bash
 # Start nflow
@@ -354,48 +443,28 @@ nflow
 # Create new project
 > /init
 
-# Set project information
+# Set project info
 > Project name: My First Novel
 > Genre: Fantasy
 > Estimated word count: 200,000
 > Main style: Passionate, Adventure
 ```
 
-### Generate Outline
+### Core Workflow
 
 ```bash
-> outline Generate a fantasy novel outline, protagonist is a transmigrator, starts rising from being a loser
-```
+# 1. Generate outline
+> outline Generate a fantasy novel outline, protagonist is a transmigrator
 
-### Create Characters
+# 2. Create characters
+> character Create protagonist, name is Lin Feng, brave and kind
 
-```bash
-# Create protagonist
-> character Create protagonist, name is Lin Feng, personality is brave and kind, extraordinary talent but suppressed
+# 3. Write chapter
+> write Write chapter 1, protagonist transmigrates to a new world
 
-# Create antagonist
-> character Create antagonist, name is Zhao Tianba, personality is domineering and sinister, local bully
-
-# Create supporting character
-> character Create supporting character, name is Su Wan, personality is gentle and kind, protagonist's childhood sweetheart
-```
-
-### Write Chapter
-
-```bash
-> write Write chapter 1, protagonist Lin Feng transmigrates to a new world, finds himself turned into a loser
-```
-
-### Polish Text
-
-```bash
-> polish Polish chapter 1, make descriptions more vivid, more visual
-```
-
-### Review Quality
-
-```bash
-> review Review chapter 1, check character consistency and plot logic
+# 4. Polish and review
+> polish Polish chapter 1
+> review Review chapter 1
 ```
 
 ---
@@ -875,16 +944,12 @@ SOFTWARE.
 
 ---
 
-## Other Languages
+## Star History
 
-- [简体中文](README.zh-CN.md) (Chinese Simplified)
+[![Star History Chart](https://api.star-history.com/svg?repos=makur6371/nflow&type=Date)](https://star-history.com/#makur6371/nflow&Date)
 
 ---
 
-<div align="center">
+## Other Languages
 
-  **If this project helps you, please give it a ⭐ Star!**
-
-  [![Star History Chart](https://api.star-history.com/svg?repos=makur6371/nflow&type=Date)](https://star-history.com/#makur6371/nflow&Date)
-
-</div>
+- [简体中文](README.zh-CN.md) (Chinese Simplified)
